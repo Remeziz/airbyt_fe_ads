@@ -4,7 +4,7 @@
     tags = [ "top-level-intermediate" ]
 ) }}
 -- SQL model to build a hash column based on the values of this record
--- depends_on: {{ ref('fe_ads_sponsored_products_report_stream_ab2') }}
+-- depends_on: {{ ref('fe_sponsored_products_report_stream_ab2') }}
 select
     {{ dbt_utils.surrogate_key([
         object_to_string('metric'),
@@ -12,10 +12,10 @@ select
         'updatedat',
         'recordtype',
         'reportdate',
-    ]) }} as _airbyte_fe_ads_spons___report_stream_hashid,
+    ]) }} as _airbyte_fe_spons___report_stream_hashid,
     tmp.*
-from {{ ref('fe_ads_sponsored_products_report_stream_ab2') }} tmp
--- fe_ads_sponsored_products_report_stream
+from {{ ref('fe_sponsored_products_report_stream_ab2') }} tmp
+-- fe_sponsored_products_report_stream
 where 1 = 1
 {{ incremental_clause('_airbyte_emitted_at', this) }}
 
