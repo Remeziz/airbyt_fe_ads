@@ -15,7 +15,7 @@ select
     _airbyte_emitted_at,
     {{ current_timestamp() }} as _airbyte_normalized_at
 from {{ ref('fe_sponsored_products_report_stream_ab1') }}
--- fe_ads_sponsored_products_report_stream
+-- fe_sponsored_products_report_stream
 where 1 = 1
 {{ incremental_clause('_airbyte_emitted_at', this) }}
 
