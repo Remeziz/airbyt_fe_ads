@@ -49,7 +49,4 @@ vars:
     fe_sponsored_products_report_stream_ab2: main._airbyte_raw_fe_spons__roducts_report_stream
     fe_sponsored_products_report_stream_ab3: main._airbyte_raw_fe_spons__roducts_report_stream
     fe_sponsored_products_report_stream: main._airbyte_raw_fe_spons__roducts_report_stream
-    fe_sponsored_products_2ort_stream_metric_ab1: main._airbyte_raw_fe_spons__roducts_report_stream
-    fe_sponsored_products_2ort_stream_metric_ab2: main._airbyte_raw_fe_spons__roducts_report_stream
-    fe_sponsored_products_2ort_stream_metric_ab3: main._airbyte_raw_fe_spons__roducts_report_stream
-    fe_sponsored_products_report_stream_metric: main._airbyte_raw_fe_spons__roducts_report_stream
+    
