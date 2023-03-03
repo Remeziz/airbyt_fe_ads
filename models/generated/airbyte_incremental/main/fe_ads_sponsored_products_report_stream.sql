@@ -4,7 +4,7 @@
     tags = [ "top-level" ]
 ) }}
 -- Final base SQL model
--- depends_on: {{ ref('fe_ads_sponsored_products_report_stream_ab3') }}
+-- depends_on: {{ ref('fe_sponsored_products_report_stream_ab3') }}
 select
     replace(json_extract(metric, '$."sku"') , '"', '') as sku,
     replace(json_extract(metric, '$."asin"') , '"', '') as asin,
@@ -20,9 +20,9 @@ select
     _airbyte_ab_id,
     _airbyte_emitted_at,
     {{ current_timestamp() }} as _airbyte_normalized_at,
-    _airbyte_fe_ads_spons___report_stream_hashid
-from {{ ref('fe_ads_sponsored_products_report_stream_ab3') }}
--- fe_ads_sponsored_products_report_stream from {{ source('main', '_airbyte_raw_fe_ads_s__roducts_report_stream') }}
+    _airbyte_fe_spons___report_stream_hashid
+from {{ ref('fe_sponsored_products_report_stream_ab3') }}
+-- fe_sponsored_products_report_stream from {{ source('main', '_airbyte_raw_fe_s__roducts_report_stream') }}
 where 1 = 1
 {{ incremental_clause('_airbyte_emitted_at', this) }}
 
