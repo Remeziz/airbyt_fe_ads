@@ -1,6 +1,7 @@
 {{ config(
     unique_key = '_airbyte_ab_id',
     schema = "main",
+    materialized='incremental',
     tags = [ "top-level" ]
 ) }}
 -- Final base SQL model
