@@ -1,6 +1,5 @@
 {{ config(
     unique_key = '_airbyte_ab_id',
-    schema = "_airbyte_main",
     materialized='incremental',
     tags = [ "top-level-intermediate" ]
 ) }}
