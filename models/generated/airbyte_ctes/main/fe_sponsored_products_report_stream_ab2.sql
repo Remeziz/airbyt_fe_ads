@@ -1,6 +1,7 @@
 {{ config(
     unique_key = '_airbyte_ab_id',
     schema = "_airbyte_main",
+    materialized='incremental',
     tags = [ "top-level-intermediate" ]
 ) }}
 -- SQL model to cast each column to its adequate SQL type converted from the JSON schema type
