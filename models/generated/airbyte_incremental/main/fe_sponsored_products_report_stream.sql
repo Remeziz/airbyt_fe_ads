@@ -25,4 +25,5 @@ from {{ ref('fe_sponsored_products_report_stream_ab3') }}
 -- fe_sponsored_products_report_stream from {{ source('main', '_airbyte_raw_fe_spons__roducts_report_stream') }}
 where 1 = 1
 {{ incremental_clause('_airbyte_emitted_at', this) }}
-
+-- Delete tmp tables 
+{{ default__clean_tmp_tables (main) }}
