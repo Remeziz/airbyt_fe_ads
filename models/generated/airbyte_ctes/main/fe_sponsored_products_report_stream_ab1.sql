@@ -1,6 +1,7 @@
 {{ config(
     unique_key = '_airbyte_ab_id',
     schema = "_airbyte_main",
+    materialized='incremental',
     tags = [ "top-level-intermediate" ]
 ) }}
 -- SQL model to parse JSON blob stored in a single column and extract into separated field columns as described by the JSON Schema
